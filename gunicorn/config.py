@@ -738,6 +738,20 @@ class PreloadApp(Setting):
         """
 
 
+class Sendfile(Setting):
+    name = "sendfile"
+    section = "Server Mechanics"
+    cli = ["--no-sendfile"]
+    validator = validate_bool
+    action = "store_false"
+    default = True
+    desc = """\
+        Disables the use of ``sendfile()``.
+        .. versionadded:: 18.0.0
+           Backported from 19.x
+        """
+
+
 class Chdir(Setting):
     name = "chdir"
     section = "Server Mechanics"
